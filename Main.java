@@ -2,9 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class Inventory {
-    static ArrayList<Inventory> Items = new ArrayList<>();
-    static Scanner sc = new Scanner(System.in);
-
+    
     private String Name, serialNum;
     private int Value;
 
@@ -29,6 +27,40 @@ class Inventory {
 
     public void setValue(int Value){
         this.Value = Value;
+    }
+}
+
+class Main {
+    static ArrayList<Inventory> Items = new ArrayList<>();
+    static Scanner sc = new Scanner(System.in);
+    static int userInput;
+    public static void main(String[] args) {
+        while(true){
+            System.out.println(
+                    "Press 1 to add an item.\n"
+                  + "Press 2 to delete an item.\n"
+                  + "Press 3 to update an item.\n"
+                  + "Press 4 to show all the items.\n"
+                  + "Press 5 to quit the program.");
+            userInput = Integer.parseInt(sc.nextLine());
+            switch (userInput) {
+                case 1:
+                    addItem();
+                    break;
+                case 2:
+                    deleteItem();
+                    break;
+                case 3:
+                    updateItem();
+                    break;
+                case 4:
+                    showItems();
+                    break;
+                case 5:
+                    System.exit(0);
+            }
+        }
+
     }
     public static void addItem(){
         System.out.println("Enter the name: ");
@@ -66,44 +98,9 @@ class Inventory {
     public static void showItems(){
         for(Inventory i:Items){
             System.out.println(
-                i.getName() + ","
-              + i.getSerialNum() + ","
-              + i.getValue());
+                    i.getName() + ","
+                  + i.getSerialNum() + ","
+                  + i.getValue());
         }
-    }
-
-
-}
-
-class Main {
-    public static void main(String[] args) {
-        int userInput;
-        Scanner input = new Scanner(System.in);
-        while(true){
-            System.out.println(
-                    "Press 1 to add an item.\n"
-                  + "Press 2 to delete an item.\n"
-                  + "Press 3 to update an item.\n"
-                  + "Press 4 to show all the items.\n"
-                  + "Press 5 to quit the program.");
-            userInput = Integer.parseInt(input.nextLine());
-            switch (userInput) {
-                case 1:
-                    Inventory.addItem();
-                    break;
-                case 2:
-                    Inventory.deleteItem();
-                    break;
-                case 3:
-                    Inventory.updateItem();
-                    break;
-                case 4:
-                    Inventory.showItems();
-                    break;
-                case 5:
-                    System.exit(0);
-            }
-        }
-
     }
 }
