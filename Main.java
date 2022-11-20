@@ -32,11 +32,11 @@ class Inventory {
     }
     public static void addItem(){
         System.out.println("Enter the name: ");
-        String Name = sc.next();
+        String Name = sc.nextLine();
         System.out.println("Enter the serial number: ");
-        String serialNum = sc.next();
+        String serialNum = sc.nextLine();
         System.out.println("Enter the value in dollars (whole number): ");
-        int Value = sc.nextInt();
+        int Value = Integer.parseInt(sc.nextLine());
         //saves input into ArrayList
         Inventory item = new Inventory(Name, serialNum, Value);
         Items.add(item);
