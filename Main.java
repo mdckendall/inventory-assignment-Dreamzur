@@ -80,8 +80,8 @@ class Main {
         int userInput;
         Scanner input = new Scanner(System.in);
         while(true){
-            System.out.print(
-                    "Press 1 to add an item.\n" 
+            System.out.println(
+                    "Press 1 to add an item.\n"
                   + "Press 2 to delete an item.\n"
                   + "Press 3 to update an item.\n"
                   + "Press 4 to show all the items.\n"
