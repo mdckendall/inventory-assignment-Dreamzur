@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class Inventory {
-    
+
     private String Name, serialNum;
     private int Value;
 
@@ -63,11 +63,11 @@ class Main {
 
     }
     public static void addItem(){
-        System.out.println("Enter the name: ");
+        System.out.println("Enter the name:");
         String Name = sc.nextLine();
-        System.out.println("Enter the serial number: ");
+        System.out.println("Enter the serial number:");
         String serialNum = sc.nextLine();
-        System.out.println("Enter the value in dollars (whole number): ");
+        System.out.println("Enter the value in dollars (whole number):");
         int Value = Integer.parseInt(sc.nextLine());
         //saves input into ArrayList
         Inventory item = new Inventory(Name, serialNum, Value);
@@ -75,20 +75,20 @@ class Main {
     }
     //method for deleting the item
     public static void deleteItem(){
-        System.out.println("Enter the serial number of the item to delete: ");
+        System.out.println("Enter the serial number of the item to delete:");
         String serialNum = sc.next();
         Items.removeIf(i -> i.getSerialNum().contains(serialNum));
     }
     //method for updating the item
     public static void updateItem(){
-        System.out.println("Enter the serial number of the item to change: ");
-        String serialNum = sc.next();
+        System.out.println("Enter the serial number of the item to change:");
+        String serialNum = sc.nextLine();
         for(Inventory i:Items){
             if(i.getSerialNum().contains(serialNum)){
-                System.out.println("Enter the new name: ");
-                String Name = sc.next();
-                System.out.println("Enter the new value in dollars (whole number): ");
-                int Value = sc.nextInt();
+                System.out.println("Enter the new name:");
+                String Name = sc.nextLine();
+                System.out.println("Enter the new value in dollars (whole number):");
+                int Value = Integer.parseInt(sc.nextLine());
                 i.setName(Name);
                 i.setValue(Value);
             }
