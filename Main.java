@@ -81,20 +81,27 @@ class Main {
         Scanner input = new Scanner(System.in);
         while(true){
             System.out.print(
-                    """
-                       Press 1 to add an item.
-                       Press 2 to delete an item.
-                       Press 3 to update an item.
-                       Press 4 to show all the items.
-                       Press 5 to quit the program.
-                       """);
+                    "Press 1 to add an item.\n" 
+                  + "Press 2 to delete an item.\n"
+                  + "Press 3 to update an item.\n"
+                  + "Press 4 to show all the items.\n"
+                  + "Press 5 to quit the program.");
             userInput = Integer.parseInt(input.nextLine());
             switch (userInput) {
-                case 1 -> Inventory.addItem();
-                case 2 -> Inventory.deleteItem();
-                case 3 -> Inventory.updateItem();
-                case 4 -> Inventory.showItems();
-                case 5 -> System.exit(0);
+                case 1:
+                    Inventory.addItem();
+                    break;
+                case 2:
+                    Inventory.deleteItem();
+                    break;
+                case 3:
+                    Inventory.updateItem();
+                    break;
+                case 4:
+                    Inventory.showItems();
+                    break;
+                case 5:
+                    System.exit(0);
             }
         }
 
